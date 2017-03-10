@@ -23,7 +23,8 @@ func main() {
 		filePath, err = picsource.Unsplash(FILE_DIR)
 	case "bing":
 		filePath, err = picsource.Bing(FILE_DIR)
-
+	case "aibizhi":
+		filePath, err = picsource.Aibizhi(FILE_DIR)
 	}
 	if err != nil {
 		fmt.Printf("Can't get picture from Unsplash. %s\n", err.Error())
