@@ -12,16 +12,16 @@ const (
 	UNSPLASH_API_URL = `https://api.unsplash.com/photos/random?client_id=cb82c1ab9185e27543e298abb7c74f1a74b9f6daf461214f5669a237c5199a3c`
 )
 
-type urls struct {
+type unsplashObj struct {
+	ID   string       `json:"id"`
+	Urls unsplashURLs `json:"urls"`
+}
+
+type unsplashURLs struct {
 	Raw     string `json:"raw"`
 	Full    string `json:"full"`
 	Regular string `json:"regular"`
 	Small   string `json:"small"`
-}
-
-type unsplashObj struct {
-	ID   string `json:"id"`
-	Urls urls   `json:"urls"`
 }
 
 // Unsplash provide pictures

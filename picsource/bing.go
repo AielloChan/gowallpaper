@@ -13,11 +13,11 @@ const (
 	BING_API_URL = `http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8`
 )
 
-type images struct {
-	Images []image `json:"images"`
+type bingObj struct {
+	Images []bingImage `json:"images"`
 }
 
-type image struct {
+type bingImage struct {
 	URL       string `json:"url"`
 	Copyright string `json:"copyright"`
 }
@@ -34,7 +34,7 @@ func Bing(fileDir string) (string, error) {
 		os.Exit(2)
 	}
 
-	var jsonObj images
+	var jsonObj bingObj
 	fmt.Println("Parse json string...")
 	if err := json.Unmarshal(jsonData, &jsonObj); err != nil {
 		fmt.Println("Parse json string failed.", err)
