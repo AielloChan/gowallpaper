@@ -1,4 +1,4 @@
-# GoWallpaper
+﻿# GoWallpaper
 
 GoWallpaper is a golang build program. It use [Unsplash](https://unsplash.com)'s ppicture source to set your windows wallpaper in a simple and clean way.
 
@@ -24,11 +24,11 @@ go run main.go
 
 we provide many picture source, you can see them below:
 
-- [bing每日一图](https://bing.com)
+- [Bing 每日一图](https://bing.com)
 - [百度图片](https://images.baidu.com)
 - [Unsplash](https://unsplash.com)
 - [爱壁纸](http://aibizhi.com)
-- [NationalGeographic国家地理](http://www.nationalgeographic.com/)
+- [NationalGeographic 国家地理](http://www.nationalgeographic.com/)
 
 You can just add some flag when excute the program to change source:
 ```bash
