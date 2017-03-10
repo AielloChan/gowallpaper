@@ -30,7 +30,7 @@ we provide many picture source, you can see them below:
 
 You can just add some flag when excute the program to change source:
 ```bash
-// use Unsplash picture
+// use Unsplash picture (default)
 Dese.exe -provider unsplash
 
 // use baidu picture
