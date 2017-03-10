@@ -44,8 +44,6 @@ func Bing(fileDir string) (string, error) {
 	currentItem := jsonObj.Images[0]
 	picURL := "http://www.bing.com" + currentItem.URL
 
-	fmt.Println(currentItem.Copyright)
-
 	fileName := currentItem.Copyright[:strings.Index(currentItem.Copyright, "，")]
 	fileName += ".jpg"
 
