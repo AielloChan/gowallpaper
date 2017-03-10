@@ -12,18 +12,21 @@ const (
 )
 
 func main() {
-
-	provider := flag.String("provider", "unsplash", "Pictures provider. unsplash/")
+	provider := flag.String("provider", "unsplash", "Pictures provider. unsplash/bing")
+	flag.Parse()
 
 	var filePath string
+	var err error
 
 	switch *provider {
 	case "unsplash":
-		var err error
 		filePath, err = picsource.Unsplash(FILE_DIR)
-		if err != nil {
-			fmt.Printf("Can't get picture from Unsplash. %s\n", err.Error())
-		}
+	case "bing":
+		filePath, err = picsource.Bing(FILE_DIR)
+
+	}
+	if err != nil {
+		fmt.Printf("Can't get picture from Unsplash. %s\n", err.Error())
 	}
 
 	fmt.Println("[Final] Set wallpaper...")
