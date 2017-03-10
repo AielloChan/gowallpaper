@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"os"
 	"path"
+	"time"
 )
 
 const (
@@ -44,7 +45,8 @@ func Aibizhi(fileDir string) (string, error) {
 		return "", err
 	}
 
-	picURL := jsonObj.Data[rand.Intn(len(jsonObj.Data))].Image.Diy
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	picURL := jsonObj.Data[r.Intn(len(jsonObj.Data))].Image.Diy
 
 	fileName := tools.GetNameFromURL(picURL)
 
