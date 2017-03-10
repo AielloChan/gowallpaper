@@ -1,0 +1,11 @@
+# ---> VisualStudioCode
+.vscode
+
+# ---> Gogland
+.idea
+
+# ---> This Project
+# Some additional note
+note.md
+# Download pictures
+pics
