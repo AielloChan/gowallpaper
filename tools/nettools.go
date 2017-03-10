@@ -16,7 +16,7 @@ func Fetch(url string) ([]byte, error) {
 
 	fmt.Printf("Content length: %d bytes.\n", resp.ContentLength)
 
-	fmt.Println("Donloading..")
+	fmt.Println("Donloading...")
 	fmt.Printf("%9d byte", 0)
 	var payload []byte
 	var backKeyStr string
