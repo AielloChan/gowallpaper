@@ -1,6 +1,6 @@
 ﻿# GoWallpaper
 
-GoWallpaper is a golang build program. It use [Unsplash](https://unsplash.com)'s ppicture source to set your windows wallpaper in a simple and clean way.
+GoWallpaper is a program build with golang. It use [Unsplash](https://unsplash.com)'s ppicture source to set your windows wallpaper in a simple and clean way.
 
 # How to use
 
