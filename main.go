@@ -12,7 +12,7 @@ const (
 )
 
 func main() {
-	provider := flag.String("provider", "unsplash", "Pictures provider. unsplash/bing")
+	provider := flag.String("provider", "unsplash", "Pictures provider. unsplash/bing/aibizhi/baidu")
 	flag.Parse()
 
 	var filePath string
@@ -25,6 +25,8 @@ func main() {
 		filePath, err = picsource.Bing(FILE_DIR)
 	case "aibizhi":
 		filePath, err = picsource.Aibizhi(FILE_DIR)
+	case "baidu":
+		filePath, err = picsource.Baidu(FILE_DIR)
 	}
 	if err != nil {
 		fmt.Printf("Can't get picture from Unsplash. %s\n", err.Error())
