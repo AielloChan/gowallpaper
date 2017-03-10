@@ -18,6 +18,8 @@ cd gowallpaper
 go run main.go
 ```
 
+*Note: If you use it in this way, the pictures, download from unsplash, will be stored at system temp directory, not the current folder.*
+
 # Change provider
 
 we provide many picture source, you can see them below:
@@ -45,5 +47,3 @@ Dese.exe -provider bing
 // use nationalgeographic picture
 Dese.exe -provider nationalgeographic
 ```
-
-*Note: If you use it in this way, the pictures, download from unsplash, will be stored at system temp directory, not the current folder.*
