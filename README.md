@@ -47,3 +47,7 @@ Dese.exe -provider bing
 // use nationalgeographic picture
 Dese.exe -provider nationalgeographic
 ```
+
+# Files
+
+Download pictures will automatically stored at `./pics` folder.
