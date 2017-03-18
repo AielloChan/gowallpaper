@@ -25,7 +25,7 @@ type unsplashURLs struct {
 }
 
 // Unsplash provide pictures
-func Unsplash(fileDir string) (string, error) {
+func Unsplash(fileDir string, quality int) (string, error) {
 
 	fmt.Println("[1/4]Checking directory...")
 	os.MkdirAll(fileDir, 0777)
@@ -43,7 +43,15 @@ func Unsplash(fileDir string) (string, error) {
 		return "", err
 	}
 
-	picURL := jsonObj.Urls.Regular
+	var picURL string
+	switch quality {
+	case 0:
+		picURL = jsonObj.Urls.Regular
+	case 1:
+		picURL = jsonObj.Urls.Full
+	default:
+		picURL = jsonObj.Urls.Regular
+	}
 
 	fileName := tools.GetNameFromURL(picURL)
 	fileName += ".jpg"

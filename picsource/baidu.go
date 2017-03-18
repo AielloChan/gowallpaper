@@ -24,7 +24,7 @@ type baiduData struct {
 }
 
 // Baidu provide pictures
-func Baidu(fileDir string) (string, error) {
+func Baidu(fileDir string, quality int) (string, error) {
 
 	fmt.Println("[1/4]Checking directory...")
 	os.MkdirAll(fileDir, 0777)
@@ -43,7 +43,16 @@ func Baidu(fileDir string) (string, error) {
 	}
 
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	picURL := jsonObj.Data[r.Intn(len(jsonObj.Data))].Image
+
+	var picURL string
+	switch quality {
+	case 0:
+		picURL = jsonObj.Data[r.Intn(len(jsonObj.Data))].Image
+	case 1:
+		picURL = jsonObj.Data[r.Intn(len(jsonObj.Data))].Image
+	default:
+		picURL = jsonObj.Data[r.Intn(len(jsonObj.Data))].Image
+	}
 
 	fileName := tools.GetNameFromURL(picURL)
 

@@ -23,7 +23,7 @@ type bingImage struct {
 }
 
 // Bing provide pictures
-func Bing(fileDir string) (string, error) {
+func Bing(fileDir string, quality int) (string, error) {
 
 	fmt.Println("[1/4]Checking directory...")
 	os.MkdirAll(fileDir, 0777)
@@ -42,7 +42,16 @@ func Bing(fileDir string) (string, error) {
 	}
 
 	currentItem := jsonObj.Images[0]
-	picURL := "http://www.bing.com" + currentItem.URL
+	picURL := "http://www.bing.com"
+
+	switch quality {
+	case 0:
+		picURL += currentItem.URL
+	case 1:
+		picURL += currentItem.URL
+	default:
+		picURL += currentItem.URL
+	}
 
 	fileName := currentItem.Copyright[:strings.Index(currentItem.Copyright, "，")]
 	fileName += ".jpg"

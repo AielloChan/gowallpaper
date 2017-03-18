@@ -36,7 +36,7 @@ type ngSize struct {
 }
 
 // NationalGeographic provide pictures
-func NationalGeographic(fileDir string) (string, error) {
+func NationalGeographic(fileDir string, quality int) (string, error) {
 
 	fmt.Println("[1/4]Checking directory...")
 	os.MkdirAll(fileDir, 0777)
@@ -56,7 +56,15 @@ func NationalGeographic(fileDir string) (string, error) {
 
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	currentItem := jsonObj.Items[r.Intn(len(jsonObj.Items))]
-	picURL := currentItem.URL + currentItem.Sizes.Size2048
+	var picURL string
+	switch quality {
+	case 0:
+		picURL = currentItem.URL + currentItem.Sizes.Size1024
+	case 1:
+		picURL = currentItem.URL + currentItem.Sizes.Size2048
+	default:
+		picURL = currentItem.URL + currentItem.Sizes.Size1024
+	}
 
 	fileName := currentItem.Title + ".jpg"
 

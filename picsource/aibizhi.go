@@ -27,7 +27,7 @@ type aibizhiImage struct {
 }
 
 // Aibizhi provide pictures
-func Aibizhi(fileDir string) (string, error) {
+func Aibizhi(fileDir string, quality int) (string, error) {
 
 	fmt.Println("[1/4]Checking directory...")
 	os.MkdirAll(fileDir, 0777)
@@ -46,7 +46,16 @@ func Aibizhi(fileDir string) (string, error) {
 	}
 
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	picURL := jsonObj.Data[r.Intn(len(jsonObj.Data))].Image.Diy
+
+	var picURL string
+	switch quality {
+	case 0:
+		picURL = jsonObj.Data[r.Intn(len(jsonObj.Data))].Image.Diy
+	case 1:
+		picURL = jsonObj.Data[r.Intn(len(jsonObj.Data))].Image.Diy
+	default:
+		picURL = jsonObj.Data[r.Intn(len(jsonObj.Data))].Image.Diy
+	}
 
 	fileName := tools.GetNameFromURL(picURL)
 
