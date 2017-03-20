@@ -48,6 +48,15 @@ Dese.exe -provider bing
 Dese.exe -provider nationalgeographic
 ```
 
+You also can choose picture's quality by method below:
+
+```
+Dese.exe -provider bing -quality normal
+
+// or
+Dese.exe -provider bing -quality high
+```
+
 # Files
 
 Download pictures will automatically stored at `./pics` folder.
